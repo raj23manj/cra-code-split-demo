@@ -1,5 +1,6 @@
+
 const Products = () => {
-  return <h1>Hello from Welcome</h1>;
+  return <h1 className="products">Hello from Products</h1>;
 };
 
 export default Products;

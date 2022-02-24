@@ -1,11 +1,13 @@
 import http from './http-common';
-
+import { counterActions } from './../store/counter';
 const setupInterceptors = store => {
   // response handling interceptor
   http.interceptors.response.use(res => {
     // Any status code that lie within the range of 2xx cause this function to trigger
     // Do something with response data
+    store.dispatch(counterActions.increase(5));
     console.log("response:", res);
+    console.log("store data:");
     return res;
   },
     err => {
@@ -19,6 +21,7 @@ const setupInterceptors = store => {
   // request handling interceptor
   http.interceptors.request.use(req => {
     // Do something before request is sent
+    store.dispatch(counterActions.increase(5));
     console.log("request:", req);
     return req;
   }, err => {

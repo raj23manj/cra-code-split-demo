@@ -6,11 +6,14 @@ import './index.scss';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
-import store from './store/index'
-import setupInterceptors from './utils/interceptors';
+//import store from './store/index';
+//import setupInterceptors from './utils/interceptors';
+
+import configureStore from './store/index';
 
 // setup interceptors
-setupInterceptors(store);
+//setupInterceptors(store);
+const store = configureStore();
 
 ReactDOM.render(
   <React.StrictMode>

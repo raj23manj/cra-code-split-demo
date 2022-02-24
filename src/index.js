@@ -7,6 +7,10 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
 import store from './store/index'
+import setupInterceptors from './utils/interceptors';
+
+// setup interceptors
+setupInterceptors(store);
 
 ReactDOM.render(
   <React.StrictMode>

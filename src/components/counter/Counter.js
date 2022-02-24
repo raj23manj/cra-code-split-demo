@@ -1,11 +1,21 @@
 import { useSelector, useDispatch } from 'react-redux';
 import './Counter.scss';
 import { counterActions } from '../../store/counter';
+import { useEffect } from 'react';
+import DemoService from './../../services/demo';
 
 const Counter = () => {
   const counter = useSelector(state => state.counter.counter);
   const show = useSelector(state => state.counter.showCounter);
   const dispatch = useDispatch();
+
+  // Similar to componentDidMount and componentDidUpdate:
+  useEffect(() => {
+    (async () => {
+      let response = await DemoService.getAll();
+      console.log(response);
+    })();
+  }, []);
 
   const incrementHandler = () => {
     dispatch(counterActions.increment());
@@ -26,7 +36,7 @@ const Counter = () => {
   return (
     <main className={"counter"}>
       <h1>Redux Counter</h1>
-      { show && <div className={"value"}>{ counter }</div> }
+      {show && <div className={"value"}>{counter}</div>}
       <div>
         <button onClick={incrementHandler}>Increment</button>
         <button onClick={increment5Handler}>Increment by 5</button>

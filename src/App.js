@@ -6,7 +6,7 @@ import Products from './pages/Products';
 
 function App() {
   return (
-   <div className='app-blue'>
+   <div className='app-blue w-96'>
     This is the App Page!!!
      <Route path="/welcome">
        <Welcome />

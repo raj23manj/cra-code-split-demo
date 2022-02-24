@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 const Welcome = () => {
   return (
     <div className="welcome">
@@ -9,11 +11,11 @@ const Welcome = () => {
       {/* dropdown */}
       <div>
         <div className="dropdown">
-          <a href="#" className="dropdown-toggle">Dropdown Menu</a>
+          <Link to="#" className="dropdown-toggle">Dropdown Menu</Link>
           <ul className="dropdown-menu">
-            <li><a href="#">Menu Item 01</a></li>
-            <li><a href="#">Menu Item 02</a></li>
-            <li><a href="#">Menu Item 03</a></li>
+            <li><Link to="#">Menu Item 01</Link></li>
+            <li><Link to="#">Menu Item 02</Link></li>
+            <li><Link to="#">Menu Item 03</Link></li>
           </ul>
         </div>
       </div>

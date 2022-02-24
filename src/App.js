@@ -9,11 +9,9 @@ function App() {
   return (
    <div className='app-blue w-96'>
     This is the App Page!!!
-    {/* <Route path="/counter-mod">
-     <CounterMod />
-     </Route> */}
+
      <Route path="/counter">
-     <Counter />
+       <Counter />
      </Route>
      <Route path="/welcome">
        <Welcome />

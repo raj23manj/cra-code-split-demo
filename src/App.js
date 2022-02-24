@@ -3,7 +3,7 @@ import './App.scss';
 import { Route } from 'react-router-dom';
 import Welcome from './pages/Welcome';
 import Products from './pages/Products';
-import Counter from './components/Counter';
+import Counter from './components/counter/Counter';
 
 function App() {
   return (

@@ -1,5 +1,6 @@
 import http from './http-common';
-import { counterActions } from './../store/counter';
+import { counterActions } from '../store/slices/counter';
+
 const setupInterceptors = store => {
   // response handling interceptor
   http.interceptors.response.use(res => {

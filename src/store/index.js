@@ -1,11 +1,12 @@
 //import { configureStore } from '@reduxjs/toolkit';
 import { createStore, combineReducers } from 'redux'
-import counterReducer from './counter';
+import counterReducer from './slices/counter';
 import setupInterceptors from './../utils/interceptors';
 
 const staticReducers = {
   counter: counterReducer
 };
+
 // const store = configureStore({
 //   reducer: rootReducers()
 // });
@@ -19,7 +20,8 @@ const staticReducers = {
 
 
 // Configure the store
-export default function configureStore() {
+let store = {};
+const configureStore = () => {
   const store = createStore(createReducer())
   setupInterceptors(store);
   // Add a dictionary to keep track of the registered async reducers
@@ -42,3 +44,5 @@ function createReducer(asyncReducers) {
     ...asyncReducers
   })
 }
+
+export default configureStore;

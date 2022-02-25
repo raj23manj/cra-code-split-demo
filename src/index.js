@@ -9,11 +9,12 @@ import { BrowserRouter } from 'react-router-dom';
 //import store from './store/index';
 //import setupInterceptors from './utils/interceptors';
 
-import configureStore from './store/index';
+//import configureStore from './store/index';
+import store from './store/store';
 
 // setup interceptors
 //setupInterceptors(store);
-const store = configureStore();
+
 
 ReactDOM.render(
   <React.StrictMode>

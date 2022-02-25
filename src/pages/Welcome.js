@@ -1,9 +1,25 @@
 import { Link } from 'react-router-dom';
+import { useSelector, useDispatch } from 'react-redux';
+import { useEffect } from 'react';
+
+import { demoActions } from './../store/slices/demo';
 
 const Welcome = () => {
+
+  const demoShow = useSelector(state => {  return state.demo ? state.demo.demoCounter : null } );
+  const demostatus = useSelector(state => { return state.demo ? state.demo.demoStatus : null } );
+  const demosome = useSelector(state => { return state.demo ? state.demo.some : null } );
+
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+   dispatch(demoActions.dincrement());
+  }, []);
+
+
   return (
     <div className="welcome">
-      Hello from Welcome
+      Hello from Welcome {demoShow} - {demostatus} - {demosome}
       <div>
         <button className="btn btn-primary">Button</button>
       </div>

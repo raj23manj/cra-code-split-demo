@@ -1,20 +1,23 @@
 import { useSelector, useDispatch } from 'react-redux';
 import './Counter.scss';
-import { counterActions } from '../../store/slices/counter';
+import { counterActions } from '../../store/slices/counter/slice';
 import { useEffect } from 'react';
-import DemoService from './../../services/demo';
+//import DemoService from './../../services/demo';
+import { fetchProductsData } from './../../store/slices/counter/actions';
 
 const Counter = () => {
   const counter = useSelector(state => state.counter.counter);
   const show = useSelector(state => state.counter.showCounter);
+  const totalProducts = useSelector(state => state.counter.totalProducts);
   const dispatch = useDispatch();
 
   // Similar to componentDidMount and componentDidUpdate:
   useEffect(() => {
-    (async () => {
-      let response = await DemoService.getAll();
-      console.log(response);
-    })();
+    // (async () => {
+    //   let response = await DemoService.getAll();
+    //   console.log(response);
+    // })();
+    dispatch(fetchProductsData());
   }, []);
 
   const incrementHandler = () => {
@@ -35,7 +38,7 @@ const Counter = () => {
 
   return (
     <main className={"counter"}>
-      <h1>Redux Counter</h1>
+      <h1>Redux Counter - Total Products {totalProducts} </h1>
       {show && <div className={"value"}>{counter}</div>}
       <div>
         <button onClick={incrementHandler}>Increment</button>

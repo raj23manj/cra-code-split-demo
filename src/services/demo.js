@@ -2,7 +2,7 @@ import http from './../utils/http-common';
 
 class DemoService {
   getAll() {
-    return http.get("products/1");
+    return http.get("products");
   }
 }
 

@@ -143,5 +143,6 @@
   },
   "devDependencies": {
     "sass": "^1.49.8"
-  }
+  },
+  "homepage": "/investor"
 }
